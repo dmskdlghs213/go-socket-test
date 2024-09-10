@@ -110,8 +110,6 @@ func (s *server) handleConnection(ctx context.Context, conn *net.TCPConn) {
 		}
 		conn.Close()
 	}()
-	// TCPコネクションのタイムアウト設定
-	conn.SetDeadline(time.Now().Add(30 * time.Second))
 	fmt.Printf("conn read start: %s\n", conn.RemoteAddr())
 LOOP:
 	for {
